@@ -1,0 +1,7 @@
+<h2>Noticias</h2>
+<form (submit)="doSearch()">
+  <input name="buscar" type="text" [(ngModel)]="search" placeholder="Buscar...">
+  <button>Buscar</button>
+</form>
+
+<app-grid-list [source]="news"></app-grid-list>

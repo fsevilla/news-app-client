@@ -1,0 +1,60 @@
+Folder PATH listing for volume Windows
+Volume serial number is BA94-2AE5
+C:.
+|   .editorconfig
+|   .gitignore
+|   angular.json
+|   arbol.txt
+|   browserslist
+|   karma.conf.js
+|   package-lock.json
+|   package.json
+|   README.md
+|   tree.txt
+|   tsconfig.app.json
+|   tsconfig.json
+|   tsconfig.spec.json
+|   tslint.json
+|   
++---e2e
+|   |   protractor.conf.js
+|   |   tsconfig.json
+|   |   
+|   \---src
+|           app.e2e-spec.ts
+|           app.po.ts                  
+\---src
+    |   favicon.ico
+    |   index.html
+    |   main.ts
+    |   polyfills.ts
+    |   styles.scss
+    |   test.ts
+    |   
+    +---app
+    |   |   app-routing.module.ts
+    |   |   app.component.html
+    |   |   app.component.scss
+    |   |   app.component.spec.ts
+    |   |   app.component.ts
+    |   |   app.module.ts
+    |   |   
+    |   +---globals
+    |   |   \---services
+    |   |           news.service.spec.ts
+    |   |           news.service.ts
+    |   |           
+    |   \---pages
+    |       \---news
+    |               news.component.html
+    |               news.component.scss
+    |               news.component.spec.ts
+    |               news.component.ts
+    |               
+    +---assets
+    |       .gitkeep
+    |       
+    \---environments
+            environment.prod.ts
+            environment.ts
+            

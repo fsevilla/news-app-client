@@ -1,0 +1,17 @@
+app
+  globals
+    components
+    services
+      crud
+      news
+      permisos
+      auth
+      utils
+    directives
+    pipes
+    guards 
+  pages
+    news
+    otrocomponent
+
+  layouts

@@ -1,0 +1,9 @@
+<h2>Recientes</h2>
+
+<select [(ngModel)]="country" (change)="onCountryChange()">
+  <option value="">Selecciona un pais</option>
+  <option value="mx">Mexico</option>
+  <option value="us">USA</option>
+</select>
+
+<app-grid-list [source]="headlines" (onChildClick)="onItemClick($event)"></app-grid-list>

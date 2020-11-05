@@ -1,0 +1,12 @@
+<div *ngIf="items.length==0">
+  <p>No hay elementos para mostrar</p>
+</div>
+
+<div class="grid">
+  <div class="sm-50 md-25" *ngFor="let item of items">
+    <a [routerLink]="item.id" (click)="handleClick(item)">
+      <img src="{{item.urlToImage || 'https://sisterhoodofstyle.com/wp-content/uploads/2018/02/no-image-1.jpg'}}" alt="">
+      {{item.title}}
+    </a>
+  </div>
+</div>

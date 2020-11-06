@@ -1,0 +1,11 @@
+<h2>Iniciar sesion</h2>
+<form [formGroup]="form" (submit)="login()">
+  <div>
+    <input type="email" placeholder="Email" formControlName="email">
+  </div>
+  <div>
+    <input [type]="inputType" placeholder="Contraseña" formControlName="password">
+    <button type="button" (click)="togglePasswordView()">Ver</button>
+  </div>
+  <button [disabled]="form.invalid">Iniciar sesion</button>
+</form>

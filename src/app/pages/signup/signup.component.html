@@ -14,13 +14,14 @@
     <input type="password" name="password" formControlName="password">
   </div>
   <div>
-    <label for="conrfirmpassword">Confirmar contraseña</label>
-    <input type="password" name="conrfirmpassword" formControlName="confirm">
+    <label for="confirmpassword">Confirmar contraseña</label>
+    <input type="password" name="confirmpassword" formControlName="confirm">
   </div>
+  <p *ngIf="form.errors && form.errors.mismatch">Las contraseñas no coinciden</p>
   <div>
     <strong>{{form.valid}}</strong>
   </div>
   <div>
-    <button>Enviar</button>
+    <button [disabled]="form.invalid">Enviar</button>
   </div>
 </form>

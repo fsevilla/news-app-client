@@ -12,6 +12,7 @@ import { HeadlinesComponent } from './pages/headlines/headlines.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { GridListComponent } from './globals/components/grid-list/grid-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     HeadlinesComponent,
     HeaderComponent,
     GridListComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

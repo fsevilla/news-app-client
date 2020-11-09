@@ -36,10 +36,10 @@ export class LoginComponent implements OnInit {
       console.log('Inicio sesion ', response.token);
       this.authService.save(response);
       this.loginError = false;
-      this.router.navigate(['/noticias']);
+      this.router.navigate(['/recientes']);
     }).catch(err => {
       this.loginError = true;
-      this.router.navigate(['/noticias']);
+      this.router.navigate(['/recientes']);
     });
 
   }

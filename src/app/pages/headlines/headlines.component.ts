@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NewsService } from 'src/app/globals/services/news.service';
+
 
 @Component({
   selector: 'app-headlines',

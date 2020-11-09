@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { SocialAuthService, GoogleLoginProvider } from "angularx-social-login";
+
 import { AuthService } from 'src/app/globals/services/auth.service';
 import { SessionService } from 'src/app/globals/services/session.service';
 
@@ -20,13 +22,18 @@ export class LoginComponent implements OnInit {
     private formBuilder:FormBuilder,
     private sessionService:SessionService,
     private authService:AuthService,
-    private router:Router
+    private router:Router,
+    private socialAuthService: SocialAuthService
   ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
+    });
+
+    this.socialAuthService.authState.subscribe((user) => {
+      console.log('Datos del usuario de Google', user);
     });
   }
 
@@ -46,6 +53,10 @@ export class LoginComponent implements OnInit {
 
   togglePasswordView() {
     this.inputType = this.inputType === 'password' ? 'text' : 'password';
+  }
+
+  googleLogin() {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
 }

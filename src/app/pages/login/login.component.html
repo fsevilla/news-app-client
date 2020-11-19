@@ -1,14 +1,27 @@
-<h2>Iniciar sesion</h2>
-<form [formGroup]="form" (submit)="login()">
-  <div>
-    <input type="email" placeholder="Email" formControlName="email">
-  </div>
-  <div>
-    <input [type]="inputType" placeholder="Contraseña" formControlName="password">
-    <button type="button" (click)="togglePasswordView()">Ver</button>
-  </div>
-  <button [disabled]="form.invalid">Iniciar sesion</button>
-</form>
+<div class="form-wrapper">
+  <h2>Iniciar sesion</h2>
+  <form [formGroup]="form" (submit)="login()">
+    <div>
+      <mat-form-field>
+        <mat-label>Correo electronico</mat-label>
+        <input matInput type="email" placeholder="Email" formControlName="email">
+        <mat-error>Este campo es requerido</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input [type]="inputType" matInput placeholder="Contraseña" formControlName="password">
+        <mat-error>La contraseña es requerida</mat-error>
+      </mat-form-field>
+      <button mat-icon-button type="button" (click)="togglePasswordView()">
+        <mat-icon *ngIf="inputType=='password'" aria-hidden="false" aria-label="visibility icon">visibility</mat-icon>
+        <mat-icon *ngIf="inputType=='text'" aria-hidden="false" aria-label="visibility icon">visibility_off</mat-icon>
+      </button>
+    </div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">Iniciar sesion</button>
+  </form>
 
-<p>O inicia sesion con tu cuenta de </p>
-<button (click)="googleLogin()">Google</button>
+  <p>O inicia sesion con tu cuenta de </p>
+  <button mat-flat-button color="primary" (click)="googleLogin()">Google</button>
+</div>

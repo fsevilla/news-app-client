@@ -18,6 +18,8 @@ import { GridListComponent } from './globals/components/grid-list/grid-list.comp
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { MaterialModule } from './modules/material/material.module';
+
 import { environment } from './../environments/environment';
 
 @NgModule({
@@ -40,7 +42,8 @@ import { environment } from './../environments/environment';
     FormsModule,
     ReactiveFormsModule,
     SocialLoginModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MaterialModule
   ],
   providers: [
     {

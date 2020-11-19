@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <span>News App</span>
   <ul *ngIf="isLoggedIn">
     <li><a routerLink="noticias">Noticias</a></li>
@@ -6,4 +6,13 @@
     <li><button (click)="logout()">Cerrar sesion</button></li>
   </ul>
 
-</header>
+</header> -->
+
+<mat-toolbar color="primary">
+  <span>News App</span>
+  <ul *ngIf="isLoggedIn">
+    <li><a routerLink="noticias">Noticias</a></li>
+    <li><a routerLink="recientes">Recientes</a></li>
+    <li><button (click)="logout()">Cerrar sesion</button></li>
+  </ul>
+</mat-toolbar>

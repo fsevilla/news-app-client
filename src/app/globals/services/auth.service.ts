@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { SocketIoService } from './socket-io.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +9,18 @@ export class AuthService {
 
   loginStatus:BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor() {
+  constructor(private socket:SocketIoService) {
     this.loginStatus.next(this.isLoggedIn());
   }
 
   save(data) {
-    this.loginStatus.next(true);
     localStorage.setItem('token', data.token);
+    this.loginStatus.next(true);
+    this.socket.connect(data.token);
   }
 
   get() {
-    return localStorage.get('token');
+    return localStorage.getItem('token');
   }
 
   isLoggedIn() {
@@ -26,7 +28,8 @@ export class AuthService {
   }
 
   clear() {
-    this.loginStatus.next(false);
     localStorage.removeItem('token');
+    this.loginStatus.next(false);
+    this.socket.disconnect();
   }
 }

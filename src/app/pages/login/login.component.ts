@@ -33,13 +33,14 @@ export class LoginComponent implements OnInit {
     });
 
     this.socialAuthService.authState.subscribe((user) => {
-      console.log('Datos del usuario de Google', user);
-      this.sessionService.googleLogin(user.idToken).then(response => {
-        console.log('Response: ', response);
-        this.authService.save(response);
-        this.loginError = false;
-        this.router.navigate(['/recientes']);
-      });
+      if(user) {
+        console.log('Google User?', user);
+        this.sessionService.googleLogin(user.idToken).then(response => {
+          this.authService.save(response, true);
+          this.loginError = false;
+          this.router.navigate(['/recientes']);
+        });
+      }
     });
   }
 

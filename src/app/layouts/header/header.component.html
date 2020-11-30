@@ -10,9 +10,10 @@
 
 <mat-toolbar color="primary">
   <span>News App Client</span>
-  <ul *ngIf="isLoggedIn">
-    <li><a routerLink="noticias">Noticias</a></li>
-    <li><a routerLink="recientes">Recientes</a></li>
-    <li><button (click)="logout()">Cerrar sesion</button></li>
-  </ul>
+  <span class="spacer"></span>
+  <ng-container *ngIf="isLoggedIn">
+    <a mat-button routerLink="noticias">Noticias</a>
+    <a mat-button routerLink="recientes">Titulares</a>
+    <button mat-button (click)="logout()">Cerrar sesion</button>
+  </ng-container>
 </mat-toolbar>

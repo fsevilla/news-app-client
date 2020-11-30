@@ -35,7 +35,13 @@ export class NewsService {
   }
 
   getNews(search=''):Promise<any> {
-    return this.http.get(environment.apiUrl + 'news?q='+search).toPromise();
+    const httpHeaders = new HttpHeaders({
+      Authorization: this.authService.get()
+    });
+
+    return this.http.get(environment.apiUrl + 'news?q='+search, {
+      headers: httpHeaders
+    }).toPromise();
   }
 
   getHeadlines(country = ''):Promise<any> {
